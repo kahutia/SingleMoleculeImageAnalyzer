@@ -1,0 +1,59 @@
+%% 3rd order polynomial w. Cross terms
+function y = mapfn( x, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, b0, b1, b2, b3, b4, b5, b6, b7, b8, b9)
+
+y = zeros( size( x ) );
+ifin=size(x)/2;
+
+for i=1:ifin
+    y(i*2-1)= a0 + ...
+        a1*x(i*2-1) + a2*x(i*2) + ...
+        a3*x(i*2-1)^2 + a4*x(i*2)^2 + ...
+        a5*x(i*2-1)^3 + a6*x(i*2)^3 + ...
+        a7*x(i*2-1)*x(i*2) +...
+        a8*x(i*2-1)^2*x(i*2) + a9*x(i*2-1)*x(i*2)^2;
+    y(i*2)  = b0 + ...
+        b1*x(i*2-1) + b2*x(i*2) + ...
+        b3*x(i*2-1)^2 + b4*x(i*2)^2 + ...
+        b5*x(i*2-1)^3 + b6*x(i*2)^3 +...
+        b7*x(i*2-1)*x(i*2) +...
+        b8*x(i*2-1)^2*x(i*2) + b9*x(i*2-1)*x(i*2)^2;
+end
+
+
+end
+
+%% fourth order polynomial
+% function y = mapfn( x, a0, a1, a2, a3, a4, a5, a6, a7, a8, b0, b1, b2, b3, b4, b5, b6, b7, b8)
+% 
+% y = zeros( size( x ) );
+% ifin=size(x)/2;
+% 
+% for i=1:ifin
+%     y(i*2-1)= a0 + ...
+%         a1*x(i*2-1) + a2*x(i*2) + ...
+%         a3*x(i*2-1)^2 + a4*x(i*2)^2 + ...
+%         a5*x(i*2-1)^3 + a6*x(i*2)^3 + ...
+%         a7*x(i*2-1)^4 + a8*x(i*2)^4;
+%     y(i*2)  = b0 + ...
+%         b1*x(i*2-1) + b2*x(i*2) + ...
+%         b3*x(i*2-1)^2 + b4*x(i*2)^2 + ...
+%         b5*x(i*2-1)^3 + b6*x(i*2)^3 +...
+%         b7*x(i*2-1)^4 + b8*x(i*2)^4; 
+% end
+% 
+% 
+% end
+
+%% third order polynomial
+% function y = mapfn( x, a0, a1, a2, a3, a4, a5, a6, b0, b1, b2, b3, b4, b5, b6)
+% 
+% y = zeros( size( x ) );
+% ifin=size(x)/2;
+% 
+% for i=1:ifin
+%     y(i*2-1)= a0 + a1*x(i*2-1) + a2*x(i*2) + a3*x(i*2-1)^2 + a4*x(i*2)^2 + a5*x(i*2-1)^3 + a6*x(i*2)^3;
+%     y(i*2)  = b0 + b1*x(i*2-1) + b2*x(i*2) + b3*x(i*2-1)^2 + b4*x(i*2)^2 + b5*x(i*2-1)^3 + b6*x(i*2)^3; 
+% end
+% 
+% 
+% end
